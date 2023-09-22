@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+	<title>
+		Управление ботами
+	</title>
+	<!--     Fonts and icons     -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"/>
+	<!-- Nucleo Icons -->
+	<link href="../assets/css/nucleo-icons.css" rel="stylesheet"/>
+	<link href="../assets/css/nucleo-svg.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="../assets/bootstrap-icons/font/bootstrap-icons.min.css">
+
+	<!-- Font Awesome Icons -->
+	<script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+	<link href="../assets/css/nucleo-svg.css" rel="stylesheet"/>
+	<!-- CSS Files -->
+	<link rel="stylesheet"
+		  href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+	<link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet"/>
+	<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body class="g-sidenav-show   bg-gray-100">
+<div class="min-height-300 bg-primary position-absolute w-100"></div>
+<aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 "
+	   id="sidenav-main">
+	<div class="sidenav-header">
+		<i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
+		   aria-hidden="true" id="iconSidenav"></i>
+		<a class="navbar-brand m-0 text-center" href="../pages/dashboard.html" target="_blank">
+			<img src="../assets/img/logo.svg" class="navbar-brand-img h-100" alt="main_logo">
+		</a>
+	</div>
+	<hr class="horizontal dark mt-0">
+	<div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link active" href="../pages/dashboard.html">
+					<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+						<i class="ni ni-shop text-primary text-sm opacity-10"></i>
+					</div>
+					<span class="nav-link-text ms-1">Мои компании</span>
+				</a>
+			</li>
+			<li class="nav-item mt-3">
+				<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Аккаунт</h6>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link " href="../pages/profile.html">
+					<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+						<i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
+					</div>
+					<span class="nav-link-text ms-1">Профиль</span>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link " href="sign-up.html">
+					<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+						<i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
+					</div>
+					<span class="nav-link-text ms-1">Управление счетом</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="sidenav-footer mx-3 ">
+		<div class="card card-plain shadow-none" id="sidenavCard">
+			<img class="w-50 mx-auto" src="../assets/img/illustrations/icon-documentation.svg"
+				 alt="sidebar_illustration">
+			<div class="card-body text-center p-3 w-100 pt-0">
+				<div class="docs-info">
+					<h6 class="mb-0">Нужна помощь?</h6>
+					<p class="text-xs font-weight-bold mb-0">Посмотрите нашу документацию</p>
+				</div>
+			</div>
+		</div>
+		<a href="../docs/documentation.html" target="_blank" class="btn btn-dark btn-sm w-100 mb-3">Документация</a>
+		<a class="btn btn-primary btn-sm mb-2 w-100" href="../pages/tech_help.html" type="button">Тех. поддержка</a>
+	</div>
+</aside>
+
+<main class="main-content position-relative border-radius-lg ">
+	<!-- Navbar -->
+	<nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur"
+		 data-scroll="false">
+		<div class="container-fluid py-1 px-3">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+					<li class="breadcrumb-item text-sm text-white opacity-5">Личный кабинет</li>
+					<li class="breadcrumb-item text-sm text-white active" aria-current="page">Компании</li>
+				</ol>
+				<h5 class="font-weight-bolder text-white mb-0">Мои компании</h5>
+			</nav>
+			<div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+				<div class="ms-md-auto pe-md-3 d-flex align-items-center">
+					<ul class="navbar-nav  justify-content-end">
+						<li class="nav-item d-flex align-items-center">
+							<a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
+								<i class="fa fa-user me-sm-1"></i>
+							</a>
+						</li>
+						<li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+							<a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
+								<div class="sidenav-toggler-inner">
+									<i class="sidenav-toggler-line bg-white"></i>
+									<i class="sidenav-toggler-line bg-white"></i>
+									<i class="sidenav-toggler-line bg-white"></i>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item dropdown ps-3 pe-2 d-flex align-items-center">
+							<a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton"
+							   data-bs-toggle="dropdown" aria-expanded="false">
+								<i class="fa fa-bell cursor-pointer"></i>
+							</a>
+							<ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4"
+								aria-labelledby="dropdownMenuButton">
+								<li class="mb-2">
+									<a class="dropdown-item border-radius-md" href="javascript:;">
+										<div class="d-flex py-1">
+											<div class="my-auto">
+												<img src="../assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
+											</div>
+											<div class="d-flex flex-column justify-content-center">
+												<h6 class="text-sm font-weight-normal mb-1">
+													<span class="font-weight-bold">New message</span> from Laur
+												</h6>
+												<p class="text-xs text-secondary mb-0">
+													<i class="fa fa-clock me-1"></i>
+													13 minutes ago
+												</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li class="mb-2">
+									<a class="dropdown-item border-radius-md" href="javascript:;">
+										<div class="d-flex py-1">
+											<div class="my-auto">
+												<img src="../assets/img/small-logos/logo-spotify.svg"
+													 class="avatar avatar-sm bg-gradient-dark  me-3 ">
+											</div>
+											<div class="d-flex flex-column justify-content-center">
+												<h6 class="text-sm font-weight-normal mb-1">
+													<span class="font-weight-bold">New album</span> by Travis Scott
+												</h6>
+												<p class="text-xs text-secondary mb-0">
+													<i class="fa fa-clock me-1"></i>
+													1 day
+												</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a class="dropdown-item border-radius-md" href="javascript:;">
+										<div class="d-flex py-1">
+											<div class="avatar avatar-sm bg-gradient-secondary  me-3  my-auto">
+												<svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1"
+													 xmlns="http://www.w3.org/2000/svg"
+													 xmlns:xlink="http://www.w3.org/1999/xlink">
+													<title>credit-card</title>
+													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+														<g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF"
+														   fill-rule="nonzero">
+															<g transform="translate(1716.000000, 291.000000)">
+																<g transform="translate(453.000000, 454.000000)">
+																	<path class="color-background"
+																		  d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z"
+																		  opacity="0.593633743"></path>
+																	<path class="color-background"
+																		  d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
+																</g>
+															</g>
+														</g>
+													</g>
+												</svg>
+											</div>
+											<div class="d-flex flex-column justify-content-center">
+												<h6 class="text-sm font-weight-normal mb-1">
+													Payment successfully completed
+												</h6>
+												<p class="text-xs text-secondary mb-0">
+													<i class="fa fa-clock me-1"></i>
+													2 days
+												</p>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</nav>
+	<!-- End Navbar -->
+	<div class="container-fluid py-4">
+		<div class="row">
+			<div class="col-12">
+				<div class="card mb-4">
+					<div class="card-header d-flex justify-content-between pb-0">
+						<h5 class="fw-bolder">Список компаний</h5>
+						<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createBotModal">Создать
+							компанию
+						</button>
+					</div>
+					<div class="card-body px-0 pt-0 pb-2">
+						<div class="row">
+							<div class="col-12 col-md-6 col-lg-3">
+
+								<div class="card shadow-none chatbot-card">
+									<a href="../pages/dashboard.html" class="card-header pb-0">
+										<img class="rounded-3" src="/assets/img/marie.jpg" height="180" alt="">
+									</a>
+									<div class="card-body pt-2">
+										<a href="../pages/dashboard.html"><h5 class="m-0">ОсОО "ГрандСтрой"</h5></a>
+										<p class="text-secondary fs-6">Создано 20.09.2023</p>
+										<div class="d-flex">
+											<a href="../pages/dashboard.html" class="btn btn-outline-primary p-2 px-3" type="button">
+												Перейти
+											</a>
+											<button class="btn btn-outline-primary ms-2 p-2 px-3 d-flex align-items-center dropdown-toggle settings-button"
+													type="button" data-bs-toggle="dropdown" aria-expanded="false">
+												<i class="ni ni-settings-gear-65 fs-6"></i>
+											</button>
+											<ul class="dropdown-menu">
+												<li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+													   data-bs-target="#renameModal">Переименовать</a></li>
+												<li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+													   data-bs-target="#settingsBotModal">Настройка бота</a></li>
+												<li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+													   data-bs-target="#deleteModal">Удалить</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+<!-- Rename Modal -->
+<div class="modal fade" id="renameModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="renameModalLabel">Переименовать</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form id="rename_form" action="">
+					<div>
+						<label for="rename_name" class="form-label fw-normal modal-label">Введите новое название
+							бота</label>
+						<input type="text" class="form-control" id="rename_name" placeholder="Название"
+							   value="Чат-бот для мэрии">
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer justify-content-start">
+				<button type="submit" form="rename_form" class="btn btn-primary">Сохранить</button>
+				<button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Отмена</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Integration Modal -->
+<div class="modal fade" id="integModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="integModalLabel">Вставить на сайт</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<p>Вставьте данный код на сайт</p>
+				<pre><code class="language-html">&lt;div class="chatbot">&lt;/div>
+&lt;script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"&gt;&lt;/script&gt;</code></pre>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Закрыть</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="deleteModalLabel">Удаление</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<p>Вы уверены что хотите удалить "Чат-бот для мэрии" навсегда?</p>
+			</div>
+			<div class="modal-footer">
+				<form action="#" id="deleteForm">
+					<input type="text" hidden value="2" name="id">
+					<button type="submit" class="btn btn-danger">Удалить</button>
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Create Modal -->
+<div class="modal fade" id="createBotModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+	<div class="modal-dialog">
+		<div class="modal-content p-4">
+			<div class="modal-body">
+				<h3>Создание компании</h3>
+				<form id="create_form" class="mt-3" action="">
+					<div class="pt-3">
+						<div class="mb-3">
+							<input required type="text" class="form-control form-control-lg" placeholder="Название компании *"
+								   aria-label="CompanyName">
+						</div>
+						<div class="mb-3">
+							<input required type="text" class="form-control form-control-lg" placeholder="Телефон компании *"
+								   aria-label="CompanyPhone">
+						</div>
+						<div class="mb-3">
+							<input required type="text" class="form-control form-control-lg" placeholder="Адрес компании *"
+								   aria-label="CompanyAddress">
+						</div>
+						<button class="btn btn-primary mt-3 w-100">Продожить</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Bot Settings Modal -->
+<div class="modal fade" id="settingsBotModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+	<div class="modal-dialog modal-xl">
+		<div class="modal-content p-3 pb-0">
+			<div class="modal-body">
+				<h3>Настройка чат-бота</h3>
+				<div class="row mt-5">
+					<div class="col-6">
+						<form action="" id="form_edit_bot">
+							<label for="rename_name" class="form-label fw-normal modal-label">Изображение бота</label>
+							<div id="pick_bot_avatar" class="image-picker mb-3">
+								<img src="http://via.placeholder.com/200x200" width="200" height="200"
+									 class="rounded d-block mb-3" alt="...">
+								<input type="file" class="form-control" id="image_inchat" name="image_inchat"
+									   accept="image/jpeg,image/jpg,image/png">
+							</div>
+
+							<label for="rename_name" class="form-label fw-normal modal-label">Имя бота в чате</label>
+							<input  type="text" class="form-control" id="name_inchat" name="name_inchat"
+								   placeholder="Придумайте имя чат-бота" value="Чат-бот">
+
+							<h5 class="mt-5">Настройки внешнего вида</h5>
+							<div class="row gy-4 d-flex flex-">
+								<div class="col-4">
+									<label for="botBackInput" class="form-label">Цвет фона бота</label>
+									<input type="color" class="form-control form-control-color" id="botBackInput"
+										   value="#F5F8FBFF" title="Choose your color">
+								</div>
+								<div class="col-4">
+									<label for="botTextInput" class="form-label">Цвет текста бота</label>
+									<input type="color" class="form-control form-control-color" id="botTextInput"
+										   value="#ffffff" title="Choose your color">
+								</div>
+								<div class="col-4">
+									<label for="userBackInput" class="form-label">Цвет фона прользователя</label>
+									<input type="color" class="form-control form-control-color" id="userBackInput"
+										   value="#563d7c" title="Choose your color">
+								</div>
+								<div class="col-4">
+									<label for="userTextInput" class="form-label">Цвет текста прользователя</label>
+									<input type="color" class="form-control form-control-color" id="userTextInput"
+										   value="#563d7c" title="Choose your color">
+								</div>
+								<div class="col-4">
+									<label for="backColorInput" class="form-label">Цвет фона</label>
+									<input type="color" class="form-control form-control-color" id="backColorInput"
+										   value="#563d7c" title="Choose your color">
+								</div>
+								<div class="col-4">
+									<label for="backHeaderInput" class="form-label">Цвет фона шапки</label>
+									<input type="color" class="form-control form-control-color" id="backHeaderInput"
+										   value="#563d7c" title="Choose your color">
+								</div>
+								<div class="col-4">
+									<label for="textHeaderInput" class="form-label">Цвет текста шапки</label>
+									<input type="color" class="form-control form-control-color" id="textHeaderInput"
+										   value="#563d7c" title="Choose your color">
+								</div>
+							</div>
+
+							<input type="text" hidden value="2" name="id">
+						</form>
+					</div>
+					<div class="col-4">
+						<div class="rsc-container sc-iwsKbI chat-bot-container" width="350px" height="520px">
+							<div class="rsc-header sc-gqjmRU chatBotHeader"><h2 id="name_bot_text" class="rsc-header-title sc-VigVT chatBotHeaderText">
+								Чат-бот</h2></div>
+							<div class="rsc-content sc-gZMcBi fBGGBn" height="520px">
+								<div class="rsc-ts rsc-ts-bot sc-dnqmqq efROPc">
+									<div class="rsc-ts-image-container sc-htoDjs vmYlS"><img
+											class="rsc-ts-image sc-gzVnrw cwuCQv"
+											src="data:image/svg+xml,%3csvg version='1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e%3cpath d='M303 70a47 47 0 1 0-70 40v84h46v-84c14-8 24-23 24-40z' fill='%2393c7ef'/%3e%3cpath d='M256 23v171h23v-84a47 47 0 0 0-23-87z' fill='%235a8bb0'/%3e%3cpath fill='%2393c7ef' d='M0 240h248v124H0z'/%3e%3cpath fill='%235a8bb0' d='M264 240h248v124H264z'/%3e%3cpath fill='%2393c7ef' d='M186 365h140v124H186z'/%3e%3cpath fill='%235a8bb0' d='M256 365h70v124h-70z'/%3e%3cpath fill='%23cce9f9' d='M47 163h419v279H47z'/%3e%3cpath fill='%2393c7ef' d='M256 163h209v279H256z'/%3e%3cpath d='M194 272a31 31 0 0 1-62 0c0-18 14-32 31-32s31 14 31 32z' fill='%233c5d76'/%3e%3cpath d='M380 272a31 31 0 0 1-62 0c0-18 14-32 31-32s31 14 31 32z' fill='%231e2e3b'/%3e%3cpath d='M186 349a70 70 0 1 0 140 0H186z' fill='%233c5d76'/%3e%3cpath d='M256 349v70c39 0 70-31 70-70h-70z' fill='%231e2e3b'/%3e%3c/svg%3e"
+											alt="avatar"></div>
+									<div class="rsc-ts-bubble sc-bZQynM message-bot-text">О чем вы сейчас думаете?</div>
+								</div>
+								<div class="rsc-os sc-EHOje jvzENE">
+									<ul class="rsc-os-options sc-ifAKCX gkhNlr">
+										<li class="rsc-os-option sc-htpNat GgOGn"><a
+												class="rsc-os-option-element sc-bxivhb chatBotButton">О небе</a></li>
+										<li class="rsc-os-option sc-htpNat GgOGn"><a
+												class="rsc-os-option-element sc-bxivhb chatBotButton">О смысле жизни</a></li>
+										<li class="rsc-os-option sc-htpNat GgOGn"><a
+												class="rsc-os-option-element sc-bxivhb chatBotButton">О поле</a></li>
+									</ul>
+								</div>
+								<div class="rsc-ts rsc-ts-user sc-dnqmqq eBYsSN">
+									<div class="rsc-ts-image-container sc-htoDjs fmWSyf"><img
+											class="rsc-ts-image sc-gzVnrw eijbEu"
+											src="data:image/svg+xml,%3csvg viewBox='-208.5 21 100 100' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3ccircle cx='-158.5' cy='71' fill='%23F5EEE5' r='50'/%3e%3cdefs%3e%3ccircle cx='-158.5' cy='71' id='a' r='50'/%3e%3c/defs%3e%3cclipPath id='b'%3e%3cuse overflow='visible' xlink:href='%23a'/%3e%3c/clipPath%3e%3cpath clip-path='url(%23b)' d='M-108.5 121v-14s-21.2-4.9-28-6.7c-2.5-.7-7-3.3-7-12V82h-30v6.3c0 8.7-4.5 11.3-7 12-6.8 1.9-28.1 7.3-28.1 6.7v14h100.1z' fill='%23E6C19C'/%3e%3cg clip-path='url(%23b)'%3e%3cdefs%3e%3cpath d='M-108.5 121v-14s-21.2-4.9-28-6.7c-2.5-.7-7-3.3-7-12V82h-30v6.3c0 8.7-4.5 11.3-7 12-6.8 1.9-28.1 7.3-28.1 6.7v14h100.1z' id='c'/%3e%3c/defs%3e%3cclipPath id='d'%3e%3cuse overflow='visible' xlink:href='%23c'/%3e%3c/clipPath%3e%3cpath clip-path='url(%23d)' d='M-158.5 100.1c12.7 0 23-18.6 23-34.4 0-16.2-10.3-24.7-23-24.7s-23 8.5-23 24.7c0 15.8 10.3 34.4 23 34.4z' fill='%23D4B08C'/%3e%3c/g%3e%3cpath d='M-158.5 96c12.7 0 23-16.3 23-31 0-15.1-10.3-23-23-23s-23 7.9-23 23c0 14.7 10.3 31 23 31z' fill='%23F2CEA5'/%3e%3c/svg%3e"
+											alt="avatar"></div>
+									<div class="rsc-ts-bubble sc-bZQynM message-user-text">О небе</div>
+								</div>
+								<div class="rsc-ts rsc-ts-bot sc-dnqmqq efROPc">
+									<div class="rsc-ts-image-container sc-htoDjs vmYlS"><img
+											class="rsc-ts-image sc-gzVnrw cwuCQv"
+											src="data:image/svg+xml,%3csvg version='1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e%3cpath d='M303 70a47 47 0 1 0-70 40v84h46v-84c14-8 24-23 24-40z' fill='%2393c7ef'/%3e%3cpath d='M256 23v171h23v-84a47 47 0 0 0-23-87z' fill='%235a8bb0'/%3e%3cpath fill='%2393c7ef' d='M0 240h248v124H0z'/%3e%3cpath fill='%235a8bb0' d='M264 240h248v124H264z'/%3e%3cpath fill='%2393c7ef' d='M186 365h140v124H186z'/%3e%3cpath fill='%235a8bb0' d='M256 365h70v124h-70z'/%3e%3cpath fill='%23cce9f9' d='M47 163h419v279H47z'/%3e%3cpath fill='%2393c7ef' d='M256 163h209v279H256z'/%3e%3cpath d='M194 272a31 31 0 0 1-62 0c0-18 14-32 31-32s31 14 31 32z' fill='%233c5d76'/%3e%3cpath d='M380 272a31 31 0 0 1-62 0c0-18 14-32 31-32s31 14 31 32z' fill='%231e2e3b'/%3e%3cpath d='M186 349a70 70 0 1 0 140 0H186z' fill='%233c5d76'/%3e%3cpath d='M256 349v70c39 0 70-31 70-70h-70z' fill='%231e2e3b'/%3e%3c/svg%3e"
+											alt="avatar"></div>
+									<div class="rsc-ts-bubble sc-bZQynM message-bot-text">Это прекрасно!</div>
+								</div>
+							</div>
+							<div class="rsc-footer sc-cSHVUG hDUXUW"><input type="textarea"
+																			class="rsc-input sc-kAzzGY iAuOXT"
+																			placeholder="Введите сообщениe..."
+																			disabled="" value="">
+								<button class="rsc-submit-button sc-chPdSV iUYVrA" disabled="">
+									<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+										 viewBox="0 0 500 500">
+										<g>
+											<g>
+												<polygon
+														points="0,497.25 535.5,267.75 0,38.25 0,216.75 382.5,267.75 0,318.75"></polygon>
+											</g>
+										</g>
+									</svg>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary" form="form_edit_bot">Сохранить</button>
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--   Core JS Files   -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script src="../assets/js/core/popper.min.js"></script>
+<script src="../assets/js/core/bootstrap.min.js"></script>
+<script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+<script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+<script src="../assets/js/plugins/chartjs.min.js"></script>
+<script src="../assets/js/script.js"></script>
+<script>
+	var win = navigator.platform.indexOf('Win') > -1;
+	if (win && document.querySelector('#sidenav-scrollbar')) {
+		var options = {
+			damping: '0.5'
+		}
+		Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+	}
+</script>
+<!-- Github buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="../assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+</body>
+
+</html>
